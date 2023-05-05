@@ -1,0 +1,76 @@
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  body {
+    background-image: url("https://elearningindustry.com/wp-content/uploads/2016/12/challenges-benefits-of-learning-management-systems.png");
+    background-size: auto;
+    background-position: 200px 75px;
+  }
+  
+  .card {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .card h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1.2rem;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin-top: 75px;
+    z-index: 100;
+    padding: 50px 0;
+    background-color: #f8f9fa;
+    border-right: 1px solid #eee;
+    width: 250px;
+  }
+  
+  .sidebar .nav-link {
+    font-size: 1.2rem;
+  }
+  
+  .main-content {
+    margin-left: 250px;
+    padding: 50px;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      padding: 20px 0;
+      border-right: 0;
+    }
+    
+    .sidebar .nav-link {
+      font-size: 1rem;
+    }
+    
+    .main-content {
+      margin: 0;
+    }
+  }

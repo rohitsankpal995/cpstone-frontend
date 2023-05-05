@@ -50,7 +50,7 @@ function apiLogin(user, form) {
             const { role } = data.bd
 
             if(role == 'admin') window.location.href = '../dashboard/admin-dash.html'
-            else  window.location.href = '../dashboard/user-dash.html'
+            else  window.location.href = '../da'
         } )
         .catch(err => {
             console.log(err)
