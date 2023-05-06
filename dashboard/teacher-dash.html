@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">All Courses</a>
+                  <a class="nav-link text-white" href="../home/about-us.html">about us</a>
                 </li>
               </ul>
               <div class="d-flex">
@@ -36,8 +36,7 @@
                   <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 <div class="d-flex">
-                  <a href="../user/login.html"><button class="btn btn-outline-primary me-2" type="button">Log In</button></a>
-                  <a href="../user/signup.html"><button class="btn btn-outline-primary me-2" type="button">Sign up</button></a>
+                  <a href="../home/home.html"><button class="btn btn-outline-primary me-2" type="button">Log out</button></a>
                 </div>
               </div>
             </div>
@@ -53,7 +52,7 @@
         </li>
         <li>
           <div class="col mt-2" style="text-align: margin-center">
-            <button type="button" class="btn btn-success" onclick="window.location='./create-booking-slot.html';" style="height: 50px;" data-bs-dismiss="modal">Create course</a></button>
+            <button type="button" class="btn btn-success" onclick="window.location='../teacher/createCourse.html';" style="height: 50px;" data-bs-dismiss="modal">Create course</a></button>
           </div>
         </li>
       </ul>
@@ -72,17 +71,19 @@
             <table class="table table-striped" aria-describedby="mydesc">
             
               <thead>
-                <tr>
+                <tr style="color: white;">
                   <th scope="col">#</th>
                   <th scope="col">Course name</th>
                   <th scope="col">Faculty name</th>
                   <th scope="col">Material</th>
-                  <th scope="col">Date</th>
+                  <th scope="col">Reecordings</th>
+                  <th scope="col">startDate</th>
+                  <th scope="col">endDate</th>
                   <th scope="col">Action</th>
                   
                 </tr>
               </thead>
-              <tbody id="tableBooking">
+              <tbody id="tableCourse">
 
               </tbody>
             </table>
@@ -111,6 +112,6 @@
     </div>
   </div>
 
-  <script src=""></script>
+  <script src="restapi/list-api.js"></script>
 </body>
 </html>

@@ -1,10 +1,12 @@
 const validateForm = ({ userName, password, role }) => {
 
-    const roles = ['admin', 'user']
+    const roles = ['teacher', 'user']
 
     if (userName.length <= 0) return { msg: 'invalid username', sts: false}
     if (password.length <= 0) return { msg: 'invalid password', sts: false }
     if((role.length <= 0) || !roles.includes(role)) return { msg: 'invalid role', sts: false }
+   
+
 
     return { sts : 'success', msg :'all fields are valid' }
 }

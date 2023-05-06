@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Document</title>
+
+</head>
+<body>
+  <div>
+    <nav class="
+    navbar-dark" style="background-color: black;">
+        <header class="d-flex justify-content-center py-2 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+              <svg class="bi me-2" width="10" height="32"><use xlink:href="#bootstrap"></use></svg>
+              <img class="bi me-2" width="100" height="55" src="./photos/logo.png" alt="">
+            </a>
+      
+            <ul class="nav nav-pills" style="margin-top: 10px; margin-right: 60px;font-size: 18px;">
+              <li class="nav-item" style="margin-right: 30px;"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Service</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">About us</a></li>
+              <li class="nav-item"><a href="#" class="nav-link"><img style="height: 30px;" src="./photos/Screenshot 2023-04-21 112117.png" alt=""> My Profile</a></li>
+            </ul>
+          </header>
+    </nav>
+
+
+    <section class="container">
+
+        <div class="container mt-3">
+            <div class="row bg-primary text-white mt-2 ">
+              <div class="col">
+                <h2 class="p-2 ">Bookings</h2>
+              </div>
+              <div class="col" style="text-align: end; margin-top: 8px;">
+                <button type="button" class="btn btn-success" onclick="window.location='./Admin-home.html';" style="height: 50px; width: 150px;" data-bs-dismiss="modal">Back</a></button>
+              </div>
+            </div>
+
+            
+              <table class="table table-striped" aria-describedby="mydesc">
+              
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Vahicle name</th>
+                    <th scope="col">Booking From</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">time</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Total Time for Journey</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Action</th> 
+                  </tr>
+                </thead>
+                <tbody id="tableViewMoreBooking">
+
+                </tbody>
+              </table>
+        
+            </div>
+          </div>
+    </section>
+
+     <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirm </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Do You Really Want To Delete ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" id="btDl">Delete It</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="./restapi/view-more-booking.js"></script>
+
+</body>
+</html>

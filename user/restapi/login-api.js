@@ -2,6 +2,7 @@ const validateForm = ({ userName, password }) => {
 
     if (userName.length <= 0) return { msg: 'invalid username', sts: false}
     if (password.length <= 0) return { msg: 'invalid password', sts: false }
+   
 
     return { sts : 'success', msg :'all fields are valid' }
 }
@@ -49,8 +50,8 @@ function apiLogin(user, form) {
         }).then(data => {
             const { role } = data.bd
 
-            if(role == 'admin') window.location.href = '../dashboard/admin-dash.html'
-            else  window.location.href = '../da'
+            if(role == 'teacher') window.location.href = '../dashboard/teacher-dash.html'
+            else  window.location.href = '../dashboard/user-dash.html'
         } )
         .catch(err => {
             console.log(err)
