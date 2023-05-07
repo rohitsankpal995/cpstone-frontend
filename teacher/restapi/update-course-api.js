@@ -9,6 +9,7 @@ console.log(readIdQueryParam())
 
 function apiGetCourseDetails() {
     const courseId = readIdQueryParam()
+
     axios.get(`http://localhost:8080/courses/getCourseById/${courseId}`)
         .then(httpReponse => httpReponse.data)
         .then(data => populateForm(document.getElementById('formCourse'), data.bd))
@@ -41,6 +42,8 @@ function populateForm(form, data) {
     for (const entry of entries) {
         
         console.log(entry)
+        
+
         const [key, value] = entry
         const inputField = elements.namedItem(key)
         console.log(inputField)
