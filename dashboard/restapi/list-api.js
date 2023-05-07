@@ -13,7 +13,7 @@ function propulateActualData(table, courses) {
         const { courseId, courseName, facultyName, material,recording,startDate,endDate } = course
 
         const updatePageUrl = `../teacher/updateCourse.html?courseId=${courseId}`
-        const viewPageUrl = `../teacher/view-course.html?courseId=${courseId}`
+        const viewPageUrl = `../teacher/course-details.html?courseId=${courseId}`
 
 
         const row = table.insertRow()
