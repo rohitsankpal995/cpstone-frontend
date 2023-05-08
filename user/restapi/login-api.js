@@ -51,7 +51,7 @@ function apiLogin(user, form) {
             const { role } = data.bd
 
             if(role == 'teacher') window.location.href = '../dashboard/teacher-dash.html'
-            else  window.location.href = '../dashboard/user-dash.html'
+            else  window.location.href = '../studnet/course-list.html'
         } )
         .catch(err => {
             console.log(err)

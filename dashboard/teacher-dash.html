@@ -12,7 +12,7 @@
             crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="style.css">
-        <title>Faculty Dashboard</title>
+        <title>Admin Dashboard</title>
     </head>
   <body>
     <header>
@@ -31,10 +31,12 @@
                 </li>
               </ul>
               <div class="d-flex">
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                  <div class="input-group">
+                      <input id="courseSearch" class="form-control" type="text" placeholder="Search by Course Name" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                      <button id="btnSearch" class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                  </div>
+              </form>
                 <div class="d-flex">
                   <a href="../home/home.html"><button class="btn btn-outline-primary me-2" type="button">Log out</button></a>
                 </div>
@@ -46,9 +48,9 @@
 
 
     <div class="sidebar">
-      <ul class="nav flex-column custom-height" style="align-content: center;" >
+      <ul class="nav flex-column" style="align-content: center;" >
         <li class="nav-item">
-          <a class="nav-link" href="#">Faculty Dashboard</a>
+          <a class="nav-link" href="./teacher-dash.html">Faculty Dashboard</a>
         </li>
         <li>
           <div class="col mt-2" style="text-align: margin-center">
@@ -68,10 +70,10 @@
           </div>
 
           
-            <table class="table table-striped" aria-describedby="mydesc">
+            <table class="table table-striped text-dark" aria-describedby="mydesc">
             
-              <thead>
-                <tr style="color: white;">
+              <thead style="color: rgb(12, 1, 1);">
+                <tr style="color: rgb(10, 0, 0); ">
                   <th scope="col">#</th>
                   <th scope="col">Course name</th>
                   <th scope="col">Faculty name</th>

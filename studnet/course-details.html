@@ -12,7 +12,8 @@
             crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="../dashboard/style.css">
-        <link rel="stylesheet" href="./view-course.css">
+        <!-- <link rel="stylesheet" href="./course-list.css"> -->
+        <link rel="stylesheet" href="./course-details.css">
         <title>View Course</title>
     </head>
   <body>
@@ -32,10 +33,7 @@
                 </li>
               </ul>
               <div class="d-flex">
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+               
                 <div class="d-flex">
                   <a href="../home/home.html"><button class="btn btn-outline-primary me-2" type="button">Log out</button></a>
                 </div>
@@ -49,7 +47,7 @@
     <div class="sidebar">
       <ul class="nav flex-column custom-height" style="align-content: center;" >
         <li class="nav-item">
-          <a class="nav-link" href="#">Student Dashboard</a>
+          <a class="nav-link" href="./course-list.html">Student Dashboard</a>
         </li>
         <li>
           
@@ -63,7 +61,7 @@
         <div class="newcard-grid">
             <div class="newcard">
                 <table> 
-                    <tbody id="tableCourse">
+                    <tbody class="text-center" id="tableCourse" >
                         
                     </tbody>
                 </table>
@@ -76,7 +74,9 @@
    </main>
   </div> 
 
-    <script src="./restapi/course-details-api.js"></script>
+    <script src="./restapi/course-details.js"></script>
 </body>
 
 </html>
+
+

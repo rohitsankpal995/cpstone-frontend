@@ -11,7 +11,8 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    
+        <link rel="stylesheet" href="../dashboard/style.css">
+        <link rel="stylesheet" href="./course-list.css">
         <title>View Course</title>
     </head>
   <body>
@@ -30,15 +31,25 @@
                   <a class="nav-link text-white" href="../home/about-us.html">about us</a>
                 </li>
               </ul>
-              <div class="d-flex">
+              <!-- <div class="d-flex">
                 <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                  <input class="form-control me-2"  id="courseSearch" type="search" placeholder="Search" aria-label="Search" >
+                  <button class="btn btn-outline-success" id="btnSearch" type="submit">Search</button>
                 </form>
                 <div class="d-flex">
                   <a href="../home/home.html"><button class="btn btn-outline-primary me-2" type="button">Log out</button></a>
                 </div>
-              </div>
+              </div> -->
+              <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input id="courseSearch" class="form-control" type="text" placeholder="Search here" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button id="btnSearch" class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <div class="d-flex">
+              <a href="../home/home.html"><button class="btn btn-outline-primary me-2" type="button">Log out</button></a>
+            </div>
+          </div>
             </div>
           </div>
         </nav>
@@ -46,57 +57,38 @@
 
 
     <div class="sidebar">
-      <ul class="nav flex-column" style="align-content: center;" >
+      <ul class="nav flex-column custom-height" style="align-content: center;" >
         <li class="nav-item">
-          <a class="nav-link" href="#">Faculty Dashboard</a>
+          <a class="nav-link" href="./course-list.html">Student Dashboard</a>
         </li>
         <li>
-          <div class="col mt-2" style="text-align: margin-center">
-            <button type="button" class="btn btn-success" onclick="window.location='../teacher/createCourse.html';" style="height: 50px;" data-bs-dismiss="modal">Create course</a></button>
-          </div>
+          
         </li>
       </ul>
     </div>
-    <div class="main-content">
-      <div class="container-fluid">
-        <div class="container mt-3">
-          <div class="row bg-dark text-white mt-2 ">
-            <div class="col">
-              <h2 class="p-2 ">Courses</h2>
+    
+     <div> 
+    <main>
+      <div class="newcontainer">
+        <div class="newcard-grid">
+            <div class="newcard">
+                <table> 
+                    <tbody id="tableCourse">
+                        
+                    </tbody>
+                </table>
+                <br> <br>
+                     
             </div>
-            
-          </div>
 
-          
-            <table class="table table-striped" aria-describedby="mydesc">
-            
-              <thead>
-                <tr style="color: white;">
-                  <th scope="col">#</th>
-                  <th scope="col">Course name</th>
-                  <th scope="col">Faculty name</th>
-                  <th scope="col">Material</th>
-                  <th scope="col">Recording</th>
-                  <th scope="col">startDate</th>
-                  <th scope="col">endDate</th>
-                  <th scope="col">Action</th>
-                  
-                </tr>
-              </thead>
-              <tbody id="tableCourse">
-
-              </tbody>
-            </table>
-      
-          </div>
         </div>
-       
-      </div>
-   </div>
-
     </div>
+   </main>
+  </div> 
 
-    <script src="./restapi/"></script>
+    <script src="./restapi/course-list.js"></script>
 </body>
 
 </html>
+
+

@@ -14,20 +14,20 @@ const readIdQueryParam = () => {
   
   function populateActualData(table, courses) {
     const grid = document.createElement('div')
-    grid.classList.add('grid')
+    grid.classList.add('newcard-grid')
     if (!Array.isArray(courses)) {
       courses = [courses]
     }
     for (const course of courses) {
       const { courseName, facultyName, material, recording, startDate, endDate } = course
       const card = document.createElement('div')
-      card.classList.add('card')
+      card.classList.add('newcard')
       const header = document.createElement('h2')
       header.innerHTML = courseName
       const faculty = document.createElement('p')
       faculty.innerHTML = `By: ${facultyName}`
       const dates = document.createElement('p')
-      dates.innerHTML = `Schedule:${startDate} to ${endDate}`
+      dates.innerHTML = `Schedule : ${startDate} to ${endDate}`
       const materialLink = document.createElement('a')
       materialLink.innerHTML = 'Material'
       materialLink.setAttribute('href', material)
@@ -38,12 +38,11 @@ const readIdQueryParam = () => {
       card.appendChild(header)
       card.appendChild(faculty)
       card.appendChild(dates)
-      card.appendChild(blankLine)
       card.appendChild(materialLink)
+      card.appendChild(blankLine)
       card.appendChild(blankLine)
       card.appendChild(recordingLink)
       grid.appendChild(card)
-      
     }
     table.appendChild(grid)
   } 
