@@ -48,8 +48,8 @@ function apiLogin(user, form) {
             return httpResponse.data
 
         }).then(data => {
-            const { role } = data.bd
-
+            const { role,userId } = data.bd
+            localStorage.setItem("userId", userId)
             if(role == 'teacher') window.location.href = '../dashboard/teacher-dash.html'
             else  window.location.href = '../studnet/course-list.html'
         } )
