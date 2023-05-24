@@ -11,7 +11,7 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../dashboard/style.css">
         <title>Admin Dashboard</title>
     </head>
   <body>
@@ -50,7 +50,7 @@
     <div class="sidebar">
       <ul class="nav flex-column" style="align-content: center;" >
         <li class="nav-item">
-          <a class="nav-link" href="./teacher-dash.html">Faculty Dashboard</a>
+          <a class="nav-link" href="../dashboard/teacher-dash.html">Faculty Dashboard</a>
         </li>
         <li>
           <div class="col mt-2" style="text-align: margin-center">
@@ -69,7 +69,7 @@
         <div class="container mt-3">
           <div class="row bg-dark text-white mt-2 ">
             <div class="col">
-              <h2 class="p-2 ">Courses</h2>
+              <h2 class="p-2 ">Students Enrolled</h2>
             </div>
             
           </div>
@@ -79,18 +79,14 @@
             
               <thead style="color: rgb(12, 1, 1);">
                 <tr style="color: rgb(10, 0, 0); ">
-                  <th scope="col">#</th>
-                  <th scope="col">Course name</th>
-                  <th scope="col">Faculty name</th>
-                  <th scope="col">Material</th>
-                  <th scope="col">Recording</th>
-                  <th scope="col">startDate</th>
-                  <th scope="col">endDate</th>
-                  <th scope="col">Action</th>
+                  <th scope="col">Sudent Name</th>
+                  <th scope="col">Course Name</th>
+                  <th scope="col">Faculty Name</th>
+              
                   
                 </tr>
               </thead>
-              <tbody id="tableCourse">
+              <tbody id="tableEnrolledStudents">
 
               </tbody>
             </table>
@@ -119,6 +115,6 @@
     </div>
   </div>
 
-  <script src="restapi/list-api.js"></script>
+  <script src="restapi/enrolled-student.js"></script>
 </body>
 </html>
