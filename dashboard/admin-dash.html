@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <title>Admin Dashboard</title>
+    </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./home.html">
+              <img src="data:image/png;base64,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" alt="Logo"width="100" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="../home/about-us.html">about us</a>
+                </li>
+              </ul>
+              <div class="d-flex">
+                <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                  <div class="input-group">
+                      <input id="courseSearch" class="form-control" type="text" placeholder="Search by Course Name" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                      <button id="btnSearch" class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                  </div>
+              </form>
+                <div class="d-flex">
+                  <a href="../home/home.html"><button class="btn btn-outline-primary me-2" type="button">Log out</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+    <div class="sidebar">
+      <ul class="nav flex-column" style="align-content: center;" >
+        <li class="nav-item">
+          <a class="nav-link" href="./admin-dash.html">Admin Dashboard</a>
+        </li>
+        <!-- <li>
+          <div class="col mt-2" style="text-align: margin-center">
+            <button type="button" class="btn btn-success" onclick="window.location='../teacher/createCourse.html';" style="height: 50px;" data-bs-dismiss="modal">Create course</a></button>
+          </div>
+        </li>
+        <li>
+          <div class="col mt-2" style="text-align: margin-center">
+            <button type="button" class="btn btn-success" onclick="window.location='../teacher/enrolled-student.html';" style="height: 50px;" data-bs-dismiss="modal">Enrolled Students</a></button>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+    <div class="main-content">
+      <div class="container-fluid">
+        <div class="container mt-3">
+          <div class="row bg-dark text-white mt-2 ">
+            <div class="col">
+              <h2 class="p-2 ">Users</h2>
+            </div>
+            
+          </div>
+
+      
+      
+          </div>
+        </div>
+       
+      </div>
+   </div>
+        <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirm </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Do You Really Want To Delete ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" id="btDl">Delete It</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src=""></script>
+</body>
+</html>

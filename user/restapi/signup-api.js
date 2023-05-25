@@ -1,10 +1,13 @@
 const validateForm = ({ userName, password, role }) => {
 
-    const roles = ['teacher', 'user']
+    const roles = ['teacher', 'user','admin']
 
     if (userName.length <= 0) return { msg: 'invalid username', sts: false}
-    if (password.length <= 0) return { msg: 'invalid password', sts: false }
+    if (password.length <= 0) return { msg: 'Password must be 8 characters', sts: false }
     if((role.length <= 0) || !roles.includes(role)) return { msg: 'invalid role', sts: false }
+
+  
+
    
 
 
@@ -50,6 +53,8 @@ function apiSignup(user, form) {
             showSuccessModal()
         }).catch(err => console.log(err))
 }
+
+
 
 function showSuccessModal() {
     const myModalEl = document.getElementById('successModal');

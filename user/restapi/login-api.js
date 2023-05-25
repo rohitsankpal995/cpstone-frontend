@@ -40,7 +40,7 @@ function apiLogin(user, form) {
         'content-type': 'application/json'
     }
 
-    axios.post('http://localhost:8080/user/login', user, { headers })
+    axios.post('http://localhost:8080/user/loginv2', user, { headers })
         .then(httpResponse => {
             form.reset()
             console.log(httpResponse)
@@ -51,7 +51,8 @@ function apiLogin(user, form) {
             const { role,userId } = data.bd
             localStorage.setItem("userId", userId)
             if(role == 'teacher') window.location.href = '../dashboard/teacher-dash.html'
-            else  window.location.href = '../studnet/course-list.html'
+            else if(role == "user") window.location.href = '../studnet/course-list.html'
+            else window.location.href = '../dashboard/admin-dash.html'
         } )
         .catch(err => {
             console.log(err)
