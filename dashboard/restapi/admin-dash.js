@@ -15,8 +15,8 @@ function propulateActualData(table, courses) {
 
         const { userId, userName,role } = course
 
-        const updatePageUrl = `../teacher/updateCourse.html?courseId=${userId}`
-        const viewPageUrl = `../studnet/course-details.html?courseId=${userId}`
+        const updatePageUrl = `./update-user.html?userId=${userId}`
+        const viewPageUrl = `../studnet/course-details.html?userId=${userId}`
 
 
         const row = table.insertRow()
@@ -26,7 +26,7 @@ function propulateActualData(table, courses) {
       
         row.insertCell(3).innerHTML = `
        
-        <a class='ms-2' href='${updatePageUrl}'>Update</a> 
+        <a class='mb-3' href='${updatePageUrl}'>Update</a> 
         <a class='ms-2' href='#' onclick='showConfirmDeleteModal(${userId})'>Delete</a>`
     }
 }
@@ -43,3 +43,32 @@ function apiFetchAllUsers(table) {
         })
         .catch(err => console.log(err))
 }
+
+
+function apiCallDeleteCourse(userId, modal) {
+    const url = `http://localhost:8080/user/delete/${userId}`
+
+    axios.delete(url)
+        .then(res => res.data) // you converted complete response in to our business reponse
+        // .then( data => console.log(data.msg) ) // this line can be written in destructured form as below
+        .then( ({ sts, msg, bd }) =>  modal.hide())
+        .then (window.location.reload())
+        .catch(console.log)
+}
+function showConfirmDeleteModal(userId) {
+    console.log('clicked ' + userId)
+    const myModalEl = document.getElementById('deleteModal');
+    const modal = new bootstrap.Modal(myModalEl)
+    modal.show()
+
+    const btDl = document.getElementById('btDl')
+    btDl.onclick = () => {
+        apiCallDeleteCourse(userId, modal)
+        
+        window.location.reload()
+        
+    }
+}
+
+
+
