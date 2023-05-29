@@ -11,7 +11,8 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <link rel="stylesheet" href="style.css">
+       
+        <link rel="stylesheet" href="../dashboard/style.css">
         <title>Admin Dashboard</title>
     </head>
   <body>
@@ -50,52 +51,59 @@
     <div class="sidebar">
       <ul class="nav flex-column" style="align-content: center;" >
         <li class="nav-item">
-          <a class="nav-link" href="./teacher-dash.html">Faculty Dashboard</a>
+          <a class="nav-link" href="../dashboard/teacher-dash.html">Faculty Dashboard</a>
         </li>
         <li>
           <div class="col mt-2" style="text-align: margin-center">
-            <a  class="nav-link" href='../teacher/createCourse.html';" style="height: 50px;" >Create course</a>
+            <a  class="nav-link" href='../teacher/createCourse.html';" style="height: 50px;" data-bs-dismiss="modal">Create course</a></a>
           </div>
         </li>
         <li>
           <div class="col mt-2" style="text-align: margin-center">
-            <a class="nav-link" href='../teacher/enrolled-student.html';" style="height: 50px;" data-bs-dismiss="modal">Enrolled Students</a>
+            <a class="nav-link" href='../teacher/enrolled-student.html';" style="height: 50px;" data-bs-dismiss="modal">Enrolled Students</a></a>
           </div>
         </li>
         <li>
-          <div class="col mt-2" style="text-align: margin-center">
-            <a class="nav-link" href='../notification/list-notification.html';" style="height: 50px;" data-bs-dismiss="modal">Notification</a>
-          </div>
-        </li>
+            <div class="col mt-2" style="text-align: margin-center">
+              <a class="nav-link" href='./list-notification.html';" style="height: 50px;" data-bs-dismiss="modal">Notification</a></a>
+            </div>
+          </li>
       </ul>
     </div>
+
+
     <div class="main-content">
+       
       <div class="container-fluid">
-        <div class="container mt-3">
+        <div class="container mt-1">
+            <div class="row">
+                <div class="">
+                    <a href="./create-notification.html" class="btn btn-primary btn-lg mb-3"><h6>Add Notification</h6></a>
+    
+                </div>
+            </div>
           <div class="row bg-dark text-white mt-2 ">
+            
             <div class="col">
-              <h2 class="p-2 ">Courses</h2>
+              <h2 class="p-2 ">List Of Notifications</h2>
             </div>
             
           </div>
+         
 
           
             <table class="table table-striped text-dark" aria-describedby="mydesc">
             
               <thead style="color: rgb(12, 1, 1);">
                 <tr style="color: rgb(10, 0, 0); ">
-                  <th scope="col">#</th>
-                  <th scope="col">Course name</th>
-                  <th scope="col">Faculty name</th>
-                  <th scope="col">Material</th>
-                  <th scope="col">Recording</th>
-                  <th scope="col">startDate</th>
-                  <th scope="col">endDate</th>
-                  <th scope="col">Action</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Notification</th>
+                    <th scope="col">Action</th>
                   
                 </tr>
               </thead>
-              <tbody id="tableCourse">
+              <tbody id="tableNotification">
 
               </tbody>
             </table>
@@ -105,25 +113,8 @@
        
       </div>
    </div>
-        <!-- Modal -->
-  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Confirm </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Do You Really Want To Delete ?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger" id="btDl">Delete It</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <script src="restapi/list-api.js"></script>
+    <script src="./list-notification-api.js"></script>
 </body>
+
 </html>

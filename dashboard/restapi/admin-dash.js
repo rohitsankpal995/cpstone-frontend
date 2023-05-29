@@ -26,8 +26,8 @@ function propulateActualData(table, courses) {
       
         row.insertCell(3).innerHTML = `
        
-        <a class='mb-3' href='${updatePageUrl}'>Update</a> 
-        <a class='ms-2' href='#' onclick='showConfirmDeleteModal(${userId})'>Delete</a>`
+        <a class = "btn btn-primary" href='${updatePageUrl}'>Update</a>
+        <a class='btn btn-danger' href='#' onclick='showConfirmDeleteModal(${userId})'>Delete</a>`
     }
 }
 
